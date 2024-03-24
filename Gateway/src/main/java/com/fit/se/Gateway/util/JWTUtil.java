@@ -10,7 +10,7 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JWTUtil {
-public static final String SECRET = "phamducnhan";
+public static final String SECRET = "phamducnhanphamducnhanphamducnhanphamducnhanphamducnhanphamducnhanphamducnhanphamducnhanphamducnhanphamducnhan";
 	
 	public void validateToken(final String token) {
 		Jwts.parserBuilder().setSigningKey(getSignKey()).build().parseClaimsJws(token);

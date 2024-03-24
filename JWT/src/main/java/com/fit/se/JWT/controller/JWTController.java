@@ -30,9 +30,9 @@ public class JWTController {
 	
 	@PostMapping("/login")
 	public String getToken(@RequestBody Account account) {
-		System.out.println("username"+account.getPassword());
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(account.getUsername(), account.getPassword()));
+
 		if (authentication.isAuthenticated()) {
 			return accountService.generateToken(account.getUsername());
 		} else {
