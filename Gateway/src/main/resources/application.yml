@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: course-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/course/**
+          filters:
+            - AuthFilter
+
+        - id: student-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/student/**
+          filters:
+            - AuthFilter
+
+        - id: account-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/auth/**
